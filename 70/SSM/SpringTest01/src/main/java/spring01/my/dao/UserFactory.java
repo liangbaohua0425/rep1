@@ -1,4 +1,4 @@
-package com.my.dao;
+package spring01.my.dao;
 
 public class UserFactory {
     public UserFactory(){

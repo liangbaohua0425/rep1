@@ -6,17 +6,17 @@
     <import resource="classpath:applicationContext1.xml"></import>
     <import resource="classpath:applicationContext2.xml"></import>
     <!--无参构造实例化对象-->
-<!--    <bean id="userDao" class="com.my.dao.UserDaoImpl" scope="prototype"
+<!--    <bean id="userDao" class="UserDaoImpl" scope="prototype"
     init-method="init" destroy-method="destroy"></bean>-->
 
     <!--静态工厂注入对象实例化对象-->
-    <!--<bean id="userDao" class="com.my.dao.StaticUserFactory" factory-method="getUserDao"/>-->
+    <!--<bean id="userDao" class="StaticUserFactory" factory-method="getUserDao"/>-->
 
     <!--工厂注入对象实例化对象-->
-    <bean id="factoryBean" class="com.my.dao.UserFactory"/>
+    <bean id="factoryBean" class="spring01.my.dao.UserFactory"/>
 
     <!--通过构造方法的方式依赖注入-->
-    <!--<bean id="userService" class="com.my.service.UserServiceImpl">
+    <!--<bean id="userService" class="UserServiceImpl">
         <constructor-arg name="userDao" ref="userDao"/>
     </bean>-->
 

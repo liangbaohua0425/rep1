@@ -1,6 +1,7 @@
-package com.my.service;
+package spring01.my.service;
 
-import com.my.dao.IUserDao;
+import spring01.my.dao.IUserDao;
+
 import java.util.*;
 
 public class UserServiceImpl implements IUserService {

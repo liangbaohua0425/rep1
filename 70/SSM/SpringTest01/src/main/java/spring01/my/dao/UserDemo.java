@@ -1,14 +1,16 @@
-package com.my.controller;
+package spring01.my.dao;
 
-import com.my.service.IUserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class UserController {
+public class UserDemo {
+
     public static void main(String[] args) {
-        //111
+        //创建Spring容器
         ApplicationContext app = new ClassPathXmlApplicationContext("applicationContext.xml");
-        IUserService userService = app.getBean("userService",IUserService.class);
-        userService.getName();
+        IUserDao userDao = (IUserDao) app.getBean("userDao");
+        IUserDao userDao1 = (IUserDao) app.getBean("userDao");
+        userDao.getName();
+        System.out.println(userDao1.toString());
     }
 }
