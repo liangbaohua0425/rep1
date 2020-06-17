@@ -18,7 +18,6 @@ public class AOPTest03 {
     @Test
     public void aopTest01() {
         target.targetMethod();
-        System.out.println("哈哈哈");
     }
 
     @Test
