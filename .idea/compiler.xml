@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="HelloProjet" />
         <module name="SpringMVCTest" />
+        <module name="SpringMVCTest01" />
         <module name="SpringTest01" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="HelloProjet" target="1.7" />
       <module name="SpringMVCTest" target="1.5" />
+      <module name="SpringMVCTest01" target="1.5" />
       <module name="SpringTest01" target="1.5" />
     </bytecodeTargetLevel>
   </component>
