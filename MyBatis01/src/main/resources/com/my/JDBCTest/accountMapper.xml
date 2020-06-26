@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="account">
+    <select id="findAll" resultType="account">
+        select * from account;
+    </select>
+
+    <delete id="deleteOne" parameterType="int">
+        delete from account where id = #{id};
+    </delete>
+
+    <update id="updateOne" parameterType="account">
+        update account set name = #{name},money = #{money} where id = #{id}
+    </update>
+
+    <insert id="insertOne" parameterType="account" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into account (name,money) values (#{name},#{money});
+    </insert>
+
+    <insert id="insertSecond" parameterType="account">
+        <selectKey keyColumn="id" keyProperty="id" resultType="int" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+        insert into account (name,money) values (#{name},#{money});
+    </insert>
+</mapper>
