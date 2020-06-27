@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.my.mapper.AccountMapper">
+
+    <!--sql语句的抽取-->
+    <sql id="selectAccount">
+        select * from account
+    </sql>
+
+    <select id="findAll" resultType="account">
+        <include refid="selectAccount"/>
+    </select>
+
+    <!--动态sql的练习-->
+    <select id="findAccount" parameterType="account" resultType="account">
+        <include refid="selectAccount"/>
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+            <if test="money != null">
+                and money = #{money}
+            </if>
+        </where>
+    </select>
+
+    <!--一次插入多条记录的练习-->
+    <insert id="insertAll" parameterType="account">
+        insert into account
+        <foreach collection="list" item="account" open="(name,money) values" separator=",">
+            (#{account.name},#{account.money})
+        </foreach>
+    </insert>
+
+    <select id="findByNameAndMoney" resultType="account">
+        <include refid="selectAccount"/>
+        <where>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+            <if test="money != money">
+                and money = #{money}
+            </if>
+        </where>
+    </select>
+
+    <!--<resultMap id="secondAccount" type="account">-->
+        <!--<id column="aid" property="id"/>-->
+        <!--<result column="aname" property="name"/>-->
+        <!--<result column="money" property="money"/>-->
+        <!--<association property="secondAccount" javaType="secondAccount">-->
+            <!--<result column="sid" property="id"/>-->
+            <!--<result column="secondName" property="secondName"/>-->
+        <!--</association>-->
+    <!--</resultMap>-->
+
+    <resultMap id="secondAccount" type="account">
+        <id column="aid" property="id"/>
+        <result column="aname" property="name"/>
+        <result column="money" property="money"/>
+        <result column="sid" property="secondAccount.id"/>
+        <result column="secondName" property="secondAccount.secondName"/>
+        <result column="uid" property="secondAccount.uid"/>
+    </resultMap>
+
+    <!--一对一sql语句的练习-->
+    <select id="findOneByOne" resultMap="secondAccount">
+        select a1.id aid,a1.name aname,money,a2.id sid,secondName,uid from account a1,secondaccount a2 where a1.id = a2.uid;
+    </select>
+</mapper>
