@@ -9,7 +9,6 @@
         <module name="HelloProjet" />
         <module name="MyBatis01" />
         <module name="MyBatis02" />
-        <module name="nixianggongcheng" />
         <module name="SpringMVCTest" />
         <module name="SpringMVCTest01" />
         <module name="SpringTest01" />
@@ -19,7 +18,7 @@
       <module name="HelloProjet" target="1.7" />
       <module name="MyBatis01" target="1.5" />
       <module name="MyBatis02" target="1.5" />
-      <module name="nixianggongcheng" target="1.5" />
+      <module name="MyBatis03" target="1.5" />
       <module name="SpringMVCTest" target="1.5" />
       <module name="SpringMVCTest01" target="1.5" />
       <module name="SpringTest01" target="1.5" />
