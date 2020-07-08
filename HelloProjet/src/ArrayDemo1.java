@@ -16,6 +16,8 @@ public class ArrayDemo1 {
 
         System.out.println("-------------------------");
 
+        System.out.println("aaaaaaaaaaaaaaaaa");
+
         char [] chars = {'*','1','2','3','中'};
         for (char aChar : chars) {
             System.out.println(aChar);
