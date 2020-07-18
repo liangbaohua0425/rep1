@@ -23,4 +23,11 @@ public class Main {
             System.out.println("集合已经满了");
         }
     }
+
+    @Test
+    public void mulTest(){
+        short s1 = 1;
+        System.out.println(2<<3);
+        System.out.println(3.4);
+    }
 }

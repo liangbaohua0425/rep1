@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/EasyPOI/EasyPOI.iml" filepath="$PROJECT_DIR$/EasyPOI/EasyPOI.iml" />
       <module fileurl="file://$PROJECT_DIR$/HelloProjet/HelloProjet.iml" filepath="$PROJECT_DIR$/HelloProjet/HelloProjet.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyBatis01/MyBatis01.iml" filepath="$PROJECT_DIR$/MyBatis01/MyBatis01.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyBatis02/MyBatis02.iml" filepath="$PROJECT_DIR$/MyBatis02/MyBatis02.iml" />
